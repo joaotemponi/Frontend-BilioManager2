@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Clientes</title>
+    <title>Cadastro Pedidos</title>
     <!-- CSS -->
     <link rel="stylesheet" href="css/principal.css">
     <link rel="stylesheet" href="css/form-cliente.css">
@@ -19,23 +19,28 @@
             <a href="lista-pedidos.html">PEDIDOS</a>
         </nav>
     </header>
-    <h1>CADASTRO DE CLIENTE</h1>
+    <h1>CADASTRO DE PEDIDOS</h1>
     <div class="container-formulario">
         <form action="">
-            <label for="nome">
-                Nome
+            <label for="id-cliente">
+                Cliente
                 <br>
-                <input type="text" name="input-nome-cliente" placeholder="Nome completo" required>
+                <input type="number" name="input-id-cliente" placeholder="Selecione o cliente" required>
             </label>
-            <label for="cpf">
-                CPF
+            <label for="id-carro">
+                Carro
                 <br>
-                <input type="number" name="input-cpf-cliente" placeholder="Informe o CPF" required>
+                <input type="number" name="input-id-carro" placeholder="Selecione o carro" required>
             </label>
-            <label for="telefone">
-                Telefone
+            <label for="data-pedido">
+                Data pedido
                 <br>
-                <input type="number" name="input-telefone-cliente" placeholder="Informe o Telefone" required>
+                <input type="text" name="input-data-pedido" placeholder="Insira a data do pedido" required>
+            </label>
+            <label for="valor-pedido">
+                Valor pedido
+                <br>
+                <input type="number" name="input-valor-pedido" placeholder="Insira o valor total do pedido" required>
             </label>
 
             <input type="button" value="CADASTRAR">
