@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Alunos</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/form-aluno.css">
+    <link rel="stylesheet" href="css/navegacao.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="lista-aluno.html">ALUNOS</a>
+            <a href="lista-livro.html">LIVROS</a>
+            <a href="lista-emprestimo.html">EMPRESTIMOS</a>
+        </nav>
+    </header>
+    <h1>CADASTRO DE ALUNO</h1>
+    <div class="container-formulario">
+        <form action="">
+            <div class="formes">
+                <div class="formularios">
+                    <div class="form1">
+                        <label for="nome">
+                            Nome
+                            <br>
+                            <input type="text" name="input-nome-aluno" placeholder="Nome completo" required>
+                        </label>
+                        <label for="sobrenome">
+                            Sobrenome
+                            <br>
+                            <input type="text" name="input-sobrenome-aluno" placeholder="Insira o sobrenome" required>
+                        </label>
+                        <label for="data_nascimento">
+                            Data de Nascimento
+                            <br>
+                            <input type="date" name="input-data-nascimento-aluno"
+                                placeholder="Informe a data de nascimento" required>
+                        </label>
+                    </div>
+                    <div class="form2">
+                        <label for="endereco">
+                            Endereço
+                            <br>
+                            <input type="text" name="input-endereco-aluno" placeholder="Insira o endereço" required>
+                        </label>
+                        <label for="email">
+                            Email
+                            <br>
+                            <input type="email" name="input-email-aluno" placeholder="Insira o email" required>
+                        </label>
+                        <label for="telefone">
+                            Telefone
+                            <br>
+                            <input type="number" name="input-numero-telefone-aluno" placeholder="Insira o telefone"
+                                required>
+                        </label>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <input type="button" value="CADASTRAR">
+        </form>
+    </div>
+</body>
+
+</html>

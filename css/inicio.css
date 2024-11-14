@@ -1,13 +1,12 @@
 :root {
-    --cor-primaria: #0D0D87;
+    --cor-primaria: #920606;
     --cor-de-fundo: #e0e0e0;
 }
+
 
 div {
     flex-direction: row;
     display: flex;
-    height: 500px;
-    width: 100%;
 }
 
 .div1 {
@@ -20,7 +19,6 @@ div {
 .div2 {
     flex-direction: column;
     display: flex;
-    justify-content: space-around;
     width: 50%;
 }
 
@@ -28,22 +26,19 @@ div {
     align-items: center;
 }
 
-.carro {
-    width: 70%;
-    justify-content: space-around;
-    margin-top: 7%;
-}
-
 .logo {
-    margin-top: 15%;
-    width: 50%;
+    width: 30%;
 }
 
 .texto {
     display: flex;
     flex-direction: column;
-    margin-top: 7%;
     align-items: center;
     text-align: center;
     font-size: 21px;
+    padding-top: 10%;
+}
+
+.livros {
+    width: 500px;
 }

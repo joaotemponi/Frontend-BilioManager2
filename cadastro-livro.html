@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualização de Livro</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/form-livro.css">
+    <link rel="stylesheet" href="css/navegacao.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="lista-aluno.html">ALUNOS</a>
+            <a href="lista-livro.html">LIVROS</a>
+            <a href="lista-emprestimo.html">EMPRESTIMOS</a>
+        </nav>
+    </header>
+    <h1>CADASTRAR LIVRO</h1>
+    <div class="container-formulario">
+        <form action="">
+            <div class="formes">
+                <div class="formularios">
+                    <div class="form1">
+                        <label for="titulo">
+                            Título
+                            <br>
+                            <input type="text" name="input-titulo-livro" placeholder="Insira o título do livro"
+                                required>
+                        </label>
+                        <label for="autor">
+                            Autor
+                            <br>
+                            <input type="text" name="input-autor-livro" placeholder="Insira o autor do livro" required>
+                        </label>
+                        <label for="editora">
+                            Editora
+                            <br>
+                            <input type="text" name="input-editora-livro" placeholder="Insira a editora" required>
+                        </label>
+                        <label for="ano_publicacao">
+                            Ano de Publicação
+                            <br>
+                            <input type="number" name="input-ano-publicacao-livro"
+                                placeholder="Insira o ano de publicação" required>
+                        </label>
+                    </div>
+                    <div class="form2">
+                        <label for="quantidade_total">
+                            Quantidade total
+                            <br>
+                            <input type="number" name="input-quantidade-total-livro"
+                                placeholder="Insira a quantidade total do livro" required>
+                        </label>
+                        <label for="quantidade_disponivel">
+                            Quantidade disponível
+                            <br>
+                            <input type="number" name="input-quantidade-disponivel-livro"
+                                placeholder="Insira a quantidade disponível do livro" required>
+                        </label>
+                        <label for="valor_aquisicao">
+                            Valor de Aquisição
+                            <br>
+                            <input type="number" name="input-valor-aquisicao-livro"
+                                placeholder="Insira o valor de aquisição do livro" required>
+                        </label>
+                        <label for="status_emprestimo">
+                            Status de empréstimo
+                            <br>
+                            <input type="text" name="input-status-emprestimo-livro"
+                                placeholder="Insira o status de empréstimo" required>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="botao">
+                <input type="button" value="CADASTRAR">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

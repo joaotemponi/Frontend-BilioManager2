@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 
 :root {
-    --cor-primaria: #0D0D87;
+    --cor-primaria: #920606;
     --bg-color: #D9D9D9;
     --bg-form: #EFEFEF;
 }
@@ -68,3 +68,4 @@ div a {
 .meio h1 {
     margin: 0;
 }
+

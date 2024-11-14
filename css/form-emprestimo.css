@@ -1,0 +1,67 @@
+.container-formulario {
+    width: 50%;
+    background-color: #f3f3f3;
+    padding: 2rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* Para que o botão fique abaixo das colunas */
+    align-items: center; /* Centraliza o botão e os campos */
+    margin: auto;
+    text-align: center; /* Centraliza o botão */
+}
+
+body {
+    height: 630px;
+}
+
+.formularios {
+    display: flex;
+    gap: 100px;
+    width: 100%;
+    justify-content: center; /* Centraliza as colunas de input */
+    padding-left: 8%;
+}
+
+.form1,
+.form2 {
+    flex: 1;
+    max-width: 200px; /* Limita a largura máxima para manter os campos centralizados */
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: black;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"] {
+    width: 500px;
+    height: 3.5rem;
+    padding-left: 10px;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    background-color: #e9e9e9;
+}
+
+input[type="button"] {
+    background-color: #920606;
+    color: white;
+    width: 60%;
+    padding: 0.75rem;
+    margin-top: 2rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+input[type="button"]:hover {
+    background-color: #0056b3;
+}
