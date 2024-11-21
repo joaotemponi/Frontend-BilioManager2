@@ -40,7 +40,6 @@ h1 {
 .meio, 
 .direita {
     width: 33%;
-
     display: flex;
     justify-content: center;
     align-items: center;

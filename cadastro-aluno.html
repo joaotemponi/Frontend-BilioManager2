@@ -21,51 +21,42 @@
     </header>
     <h1>CADASTRO DE ALUNO</h1>
     <div class="container-formulario">
-        <form action="">
-            <div class="formes">
-                <div class="formularios">
-                    <div class="form1">
-                        <label for="nome">
-                            Nome
-                            <br>
-                            <input type="text" name="input-nome-aluno" placeholder="Nome completo" required>
-                        </label>
-                        <label for="sobrenome">
-                            Sobrenome
-                            <br>
-                            <input type="text" name="input-sobrenome-aluno" placeholder="Insira o sobrenome" required>
-                        </label>
-                        <label for="data_nascimento">
-                            Data de Nascimento
-                            <br>
-                            <input type="date" name="input-data-nascimento-aluno"
-                                placeholder="Informe a data de nascimento" required>
-                        </label>
-                    </div>
-                    <div class="form2">
-                        <label for="endereco">
-                            Endereço
-                            <br>
-                            <input type="text" name="input-endereco-aluno" placeholder="Insira o endereço" required>
-                        </label>
-                        <label for="email">
-                            Email
-                            <br>
-                            <input type="email" name="input-email-aluno" placeholder="Insira o email" required>
-                        </label>
-                        <label for="telefone">
-                            Telefone
-                            <br>
-                            <input type="number" name="input-numero-telefone-aluno" placeholder="Insira o telefone"
-                                required>
-                        </label>
-                    </div>
-                    <br>
+        <form id="form-aluno">
+            <div class="formularios">
+                <div class="form1">
+                    <label for="input-nome">
+                        Nome:
+                        <input type="text" id="input-nome" placeholder="Nome completo" required>
+                    </label>
+                    <label for="input-sobrenome">
+                        Sobrenome:
+                        <input type="text" id="input-sobrenome" placeholder="Sobrenome" required>
+                    </label>
+                    <label for="data_nascimento">
+                        Data de Nascimento
+                        <br>
+                        <input type="date" name="input-data-nascimento-aluno" placeholder="Informe a data de nascimento" required>
+                    </label>
+                </div>
+                <div class="form2">
+                    <label for="input-endereco">
+                        Endereço:
+                        <input type="text" id="input-endereco" placeholder="Endereço" required>
+                    </label>
+                    <label for="input-email">
+                        Email:
+                        <input type="email" id="input-email" placeholder="Email" required>
+                    </label>
+                    <label for="input-telefone">
+                        Telefone:
+                        <input type="number" id="input-telefone" placeholder="Telefone" required>
+                    </label>
                 </div>
             </div>
-            <input type="button" value="CADASTRAR">
+            <input type="button" value="CADASTRAR" onclick="enviarFormulario()">
         </form>
     </div>
+    
+    <script src="js/aluno.js"></script>
 </body>
-
 </html>

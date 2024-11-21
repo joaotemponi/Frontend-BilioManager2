@@ -1,21 +1,16 @@
-async function enviaFormularioAluno() {
+async function enviaFormularioEmprestimo() {
     // Recuperar as informações do formulário e colocá-las em um objeto JSON
-    const alunoDTO = {
-        "nome": document.querySelector("input[name='input-nome-aluno']").value,
-        "sobrenome": document.querySelector("input[name='input-sobrenome-aluno']").value,
-        "data_nascimento": document.querySelector("input[name='input-data-nascimento-aluno']").value,
-        "endereco": document.querySelector("input[name='input-endereco-aluno']").value,
-        "email": document.querySelector("input[name='input-email-aluno']").value,
-        "telefone": document.querySelector("input[name='input-numero-telefone-aluno']").value
+    const emprestimoDTO = {
+        "nome": document.querySelector("input[name='input-nome-emprestimo']").value,
     };
 
     try {
-        const respostaServidor = await fetch("http://localhost:3333/novo/aluno", {
+        const respostaServidor = await fetch("http://localhost:3333/novo/emprestimo", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(alunoDTO)
+            body: JSON.stringify(emprestimoDTO)
         });
 
         if (!respostaServidor.ok) {
@@ -29,63 +24,63 @@ async function enviaFormularioAluno() {
     }
 }
 
-async function recuperarListaAlunos() {
+async function recuperarListaEmprestimos() {
     try {
-        const respostaServidor = await fetch("http://localhost:3333/lista/alunos");
+        const respostaServidor = await fetch("http://localhost:3333/lista/emprestimos");
 
         if (!respostaServidor.ok) {
             throw new Error('Erro ao comunicar com o servidor.');
         }
 
-        const listaDeAlunos = await respostaServidor.json();
-        criarTabelaAlunos(listaDeAlunos);
+        const listaDeEmprestimos = await respostaServidor.json();
+        criarTabelaEmprestimos(listaDeEmprestimos);
 
     } catch (error) {
         console.error('Erro ao comunicar-se com o servidor:', error);
     }
 }
 
-function criarTabelaAlunos(alunos) {
+function criarTabelaLivro(livro) {
     const tabela = document.querySelector('tbody');
 
     // Limpar a tabela antes de adicionar novos dados
     tabela.innerHTML = '';
 
     // Cria as linhas da tabela com os dados do array
-    alunos.forEach(aluno => {
+    emprestimo.forEach(emprestimo => {
         const linha = document.createElement('tr');
 
-        // Cria cada célula com os dados do aluno
+        // Cria cada célula com os dados do emprestimo
         const celulaID = document.createElement('td');
-        celulaID.textContent = aluno.idAluno;
+        celulaID.textContent = emprestimo.idAluno;
         linha.appendChild(celulaID);
 
-        const celulaRA = document.createElement('td');
-        celulaRA.textContent = aluno.ra;
-        linha.appendChild(celulaRA);
+        const celulaIdAluno = document.createElement('td');
+        celulaIdAluno.textContent = emprestimo.ra;
+        linha.appendChild(celulaIdAluno);
 
         const celulaNome = document.createElement('td');
-        celulaNome.textContent = aluno.nome;
+        celulaNome.textContent = emprestimo.nome;
         linha.appendChild(celulaNome);
 
         const celulaSobrenome = document.createElement('td');
-        celulaSobrenome.textContent = aluno.sobrenome;
+        celulaSobrenome.textContent = emprestimo.sobrenome;
         linha.appendChild(celulaSobrenome);
 
         const celulaDataNascimento = document.createElement('td');
-        celulaDataNascimento.textContent = aluno.data_nascimento;
+        celulaDataNascimento.textContent = emprestimo.data_nascimento;
         linha.appendChild(celulaDataNascimento);
 
         const celulaEndereco = document.createElement('td');
-        celulaEndereco.textContent = aluno.endereco;
+        celulaEndereco.textContent = emprestimo.endereco;
         linha.appendChild(celulaEndereco);
 
         const celulaEmail = document.createElement('td');
-        celulaEmail.textContent = aluno.email;
+        celulaEmail.textContent = emprestimo.email;
         linha.appendChild(celulaEmail);
 
         const celulaCelular = document.createElement('td');
-        celulaCelular.textContent = aluno.celular;
+        celulaCelular.textContent = emprestimo.celular;
         linha.appendChild(celulaCelular);
 
         // Cria a célula para ações (ícones de editar e excluir)

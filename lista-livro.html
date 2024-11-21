@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/listagem.css">
 </head>
 
-<body>
+<body onload="listarLivros()">
     <header>
         <nav>
             <a href="lista-aluno.html">ALUNOS</a>
@@ -22,7 +22,7 @@
     <div class="painel">
         <div class="esquerda">
             <div>
-                <a href="/cadastro-livro.html">NOVO LIVRO</a>
+                <a href="/cadastro-livro.html" onclick="criarTabelaLivros()">NOVO LIVRO</a>
             </div>
         </div>
         <div class="meio">
@@ -48,9 +48,10 @@
                 </tr>
             </thead>
             <tbody>
+
             </tbody>
         </table>        
     </div>
+    <script src="js/livro.js"></script>
 </body>
-
 </html>

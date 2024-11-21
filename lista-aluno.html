@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/listagem.css">
 </head>
 
-<body>
+<body onload="listarAlunos()">
     <header>
         <nav>
             <a href="lista-aluno.html">ALUNOS</a>
@@ -22,7 +22,7 @@
     <div class="painel">
         <div class="esquerda">
             <div>
-                <a href="/cadastro-aluno.html">NOVO ALUNO</a>
+                <a href="/cadastro-aluno.html" onclick="criarTabelaAluno()">NOVO ALUNO</a>
             </div>
         </div>
         <div class="meio">
@@ -46,10 +46,11 @@
                 </tr>
             </thead>
             <tbody>
+
             </tbody>
         </table>
-
     </div>
+    <script src="js/aluno.js"></script>
 </body>
 
 </html>
