@@ -47,6 +47,13 @@
                             <input type="number" name="input-ano-publicacao-livro"
                                 placeholder="Insira o ano de publicação" required>
                         </label>
+                        <div class="isbn-container">
+                            <label for="isbn">
+                                ISBN
+                                <br>
+                                <input type="text" name="input-isbn-livro" placeholder="Insira o ISBN">
+                            </label>
+                        </div>
                     </div>
                     <div class="form2">
                         <label for="quantidade_total">
@@ -76,15 +83,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="isbn-container">
-                <label for="isbn">
-                    ISBN
-                    <br>
-                    <input type="text" name="input-isbn-livro" placeholder="Insira o ISBN">
-                </label>
-            </div>
-            
 
             <div class="botao">
                 <input type="button" value="CADASTRAR" onclick="enviarFormulario()">

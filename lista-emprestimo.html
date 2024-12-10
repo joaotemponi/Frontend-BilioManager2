@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,8 @@
     <link rel="stylesheet" href="css/navegacao.css">
     <link rel="stylesheet" href="css/listagem.css">
 </head>
-<body>
+
+<body onload="listarEmprestimos()">
     <header>
         <nav>
             <a href="lista-aluno.html">ALUNOS</a>
@@ -20,7 +22,7 @@
     <div class="painel">
         <div class="esquerda">
             <div>
-                <a href="/cadastro-emprestimo.html">NOVO EMPRÉSTIMO</a>
+                <a href="/cadastro-emprestimo.html" onclick="criarTabelaLivro()">NOVO EMPRÉSTIMO</a>
             </div>
         </div>
         <div class="meio">
@@ -34,7 +36,9 @@
                 <tr>
                     <th>ID_EMPRESTIMO</th>
                     <th>ID_ALUNO</th>
+                    <th>NOME</th>
                     <th>ID_LIVRO</th>
+                    <th>TITULO DO LIVRO</th>
                     <th>DATA EMPRESTIMO</th>
                     <th>DATA DEVOLUÇÃO</th>
                     <th>STATUS EMPRÉSTIMO</th>
@@ -44,7 +48,9 @@
             <tbody>
             </tbody>
         </table>
-        
+
     </div>
+    <script src="js/emprestimo.js"></script>
 </body>
+
 </html>

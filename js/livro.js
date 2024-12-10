@@ -94,7 +94,7 @@ async function criarTabelaLivros(livros) {
         linhas.appendChild(celulaQuantidadeDisponivel);
 
         const celulaValorAquisicao = document.createElement('td');
-        celulaValorAquisicao.textContent = livro.valorAquisicao;
+        celulaValorAquisicao.textContent = "R$" + livro.valorAquisicao;
         linhas.appendChild(celulaValorAquisicao);
 
         const celulaStatusEmprestimo = document.createElement('td');

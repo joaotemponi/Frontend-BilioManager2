@@ -37,8 +37,8 @@ async function listarAlunos() {
             throw new Error("Erro ao comunicar com o servidor.");
         }
 
-        const response = await respostaServidor.json();
-        criarTabelaAluno(response);
+        const tabelaAluno = await respostaServidor.json();
+        criarTabelaAluno(tabelaAluno);
 
     } catch (error) {
         console.log('Erro ao comunicarse com o servidor');
@@ -71,7 +71,7 @@ async function criarTabelaAluno(aluno) {
         linhas.appendChild(celulaSobrenome);
 
         const celulaDataNascimento = document.createElement('td');
-        celulaDataNascimento.textContent = aluno.dataNascimento;
+        celulaDataNascimento.textContent = new Date(aluno.dataNascimento).toLocaleDateString('pt-br');
         linhas.appendChild(celulaDataNascimento);
 
         const celulaEndereco = document.createElement('td');

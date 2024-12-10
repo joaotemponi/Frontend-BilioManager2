@@ -1,4 +1,4 @@
-async function enviaFormularioEmprestimo() {
+async function enviarFormularioEmprestimo() {
     // Recuperar as informações do formulário e colocá-las em um objeto JSON
     const emprestimoDTO = {
         "nome": document.querySelector("input[name='input-nome-emprestimo']").value,
@@ -24,65 +24,68 @@ async function enviaFormularioEmprestimo() {
     }
 }
 
-async function recuperarListaEmprestimos() {
+async function listarEmprestimos() {
     try {
-        const respostaServidor = await fetch("http://localhost:3333/lista/emprestimos");
+        const respostaServidor = await fetch("http://localhost:3333/listar/emprestimo", {
+            method:"GET",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        
+        const response = await respostaServidor.json();
+        criarTabelaEmprestimos(response);
 
-        if (!respostaServidor.ok) {
-            throw new Error('Erro ao comunicar com o servidor.');
+        if(!respostaServidor.ok) {
+            throw new  Error("Erro a receber os dados para o servidor. Contate o administrador do sistema");
         }
 
-        const listaDeEmprestimos = await respostaServidor.json();
-        criarTabelaEmprestimos(listaDeEmprestimos);
-
     } catch (error) {
-        console.error('Erro ao comunicar-se com o servidor:', error);
-    }
+        console.log(error);
+        alert(`Erro ao se comunicar com o servidor.${error}`)
+    } 
 }
 
-function criarTabelaLivro(livro) {
+async function criarTabelaEmprestimos(emprestimos) {
     const tabela = document.querySelector('tbody');
 
-    // Limpar a tabela antes de adicionar novos dados
-    tabela.innerHTML = '';
-
     // Cria as linhas da tabela com os dados do array
-    emprestimo.forEach(emprestimo => {
-        const linha = document.createElement('tr');
+    emprestimos.forEach(emprestimo => {
+        const linhas = document.createElement('tr');
 
-        // Cria cada célula com os dados do emprestimo
-        const celulaID = document.createElement('td');
-        celulaID.textContent = emprestimo.idAluno;
-        linha.appendChild(celulaID);
+        // Cria cada célula com os dados do carro
+        const celulaIDEmprestimo = document.createElement('td');
+        celulaIDEmprestimo.textContent = emprestimo.idEmprestimo;
+        linhas.appendChild(celulaIDEmprestimo);
 
-        const celulaIdAluno = document.createElement('td');
-        celulaIdAluno.textContent = emprestimo.ra;
-        linha.appendChild(celulaIdAluno);
+        const celulaIDAluno = document.createElement('td');
+        celulaIDAluno.textContent = emprestimo.idAluno;
+        linhas.appendChild(celulaIDAluno);
 
-        const celulaNome = document.createElement('td');
-        celulaNome.textContent = emprestimo.nome;
-        linha.appendChild(celulaNome);
+        const celulaNomeAluno = document.createElement('td');
+        celulaNomeAluno.textContent = emprestimo.nomeAluno;
+        linhas.appendChild(celulaNomeAluno);
 
-        const celulaSobrenome = document.createElement('td');
-        celulaSobrenome.textContent = emprestimo.sobrenome;
-        linha.appendChild(celulaSobrenome);
+        const celulaIDLivro = document.createElement('td');
+        celulaIDLivro.textContent = emprestimo.idLivro;
+        linhas.appendChild(celulaIDLivro);
+        
+        const celulatituloLivro = document.createElement('td');
+        celulatituloLivro.textContent = emprestimo.tituloLivro;
+        linhas.appendChild(celulatituloLivro);
 
-        const celulaDataNascimento = document.createElement('td');
-        celulaDataNascimento.textContent = emprestimo.data_nascimento;
-        linha.appendChild(celulaDataNascimento);
+        const celulaDataEmprestimo = document.createElement('td');
+        celulaDataEmprestimo.textContent = new Date(emprestimo.dataEmprestimo).toLocaleDateString('pt-br');
+        linhas.appendChild(celulaDataEmprestimo);
 
-        const celulaEndereco = document.createElement('td');
-        celulaEndereco.textContent = emprestimo.endereco;
-        linha.appendChild(celulaEndereco);
+        const celulaDataDevolucao = document.createElement('td');
+        celulaDataDevolucao.textContent = new Date(emprestimo.dataDevolucao).toLocaleDateString('pt-br');
+        linhas.appendChild(celulaDataDevolucao);
 
-        const celulaEmail = document.createElement('td');
-        celulaEmail.textContent = emprestimo.email;
-        linha.appendChild(celulaEmail);
-
-        const celulaCelular = document.createElement('td');
-        celulaCelular.textContent = emprestimo.celular;
-        linha.appendChild(celulaCelular);
-
+        const celulaStatus = document.createElement('td');
+        celulaStatus.textContent = emprestimo.statusEmprestimo;
+        linhas.appendChild(celulaStatus);
+        
         // Cria a célula para ações (ícones de editar e excluir)
         const celulaAcoes = document.createElement('td');
 
@@ -96,9 +99,9 @@ function criarTabelaLivro(livro) {
         iconeDeletar.alt = "excluir";
         celulaAcoes.appendChild(iconeDeletar);
 
-        linha.appendChild(celulaAcoes);
+        linhas.appendChild(celulaAcoes);
 
         // Adiciona a linha ao corpo da tabela
-        tabela.appendChild(linha);
+        tabela.appendChild(linhas);
     });
 }
